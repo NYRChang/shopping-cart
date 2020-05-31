@@ -1,5 +1,7 @@
 # shopping_cart.py
 
+import datetime
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -56,6 +58,9 @@ print("Glober Market")
 print("8233 Broadway")
 print("Elmhurst, NY 11373")
 print("www.globermarket.com")
+print("---------------------------------")
+now = datetime.datetime.now()
+print("Checkout at:" , now.strftime("%Y-%m-%d %H:%M"))
 print("---------------------------------")
 
 #Printing Individual Product List and Prices
