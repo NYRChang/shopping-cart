@@ -42,26 +42,36 @@ def to_usd(my_price):
 
 #print(products)
 
-#User Input
-
+#Shopper Input
 scanned_items = []
+subtotal = 0
 while True:
     item_id = input("Please input a product identifier (from 1 to 20 or E to end): ")
     if (item_id == "E"):
          break
     else:
         scanned_items.append(item_id)
-print(scanned_items)
-
-
+        
+#Printing Individual Product List and Prices
 for i in scanned_items:
     matching_products = [p for p in products if str(p["id"]) == str(i)]
     matching_id = matching_products[0]
+    subtotal = subtotal + matching_id['price']              #adding item prices to subtotal
     price_usd = "${0:.2f}".format(matching_id['price'])
     print(f" + {matching_id['name']} ({str(price_usd)})")
 
+#Calculating Subtotal
+subtotal = subtotal + matching_id['price']
+subtotal_usd = "${0:.2f}".format(subtotal)
+print("Subtotal =", subtotal_usd)
 
+tax = subtotal * .08875
+tax_usd = "${0:.2f}".format(tax)
+print("Tax (8.875%) =", tax_usd)
 
+total_purchase = subtotal + tax
+total_usd = "${0:.2f}".format(total_purchase)
+print("Total =", total_usd)
 
 #(shopping-env)  --->> python shopping_cart.py
 # Please input a product identifier: 1
