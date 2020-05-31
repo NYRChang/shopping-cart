@@ -64,12 +64,15 @@ print("Checkout at:" , now.strftime("%Y-%m-%d %H:%M"))
 print("---------------------------------")
 
 #Printing Individual Product List and Prices
+print("Selected Products:")
 for i in scanned_items:
     matching_products = [p for p in products if str(p["id"]) == str(i)]
     matching_id = matching_products[0]
     subtotal = subtotal + matching_id['price']              #adding item prices to subtotal
     price_usd = "${0:.2f}".format(matching_id['price'])
-    print(f" + {matching_id['name']} ({str(price_usd)})")
+    print(f" ++ {matching_id['name']} ({str(price_usd)})")
+
+print("---------------------------------")
 
 #Calculating Subtotal
 subtotal = subtotal + matching_id['price']
@@ -83,6 +86,11 @@ print("Tax (8.875%) =", tax_usd)
 total_purchase = subtotal + tax
 total_usd = "${0:.2f}".format(total_purchase)
 print("Total =", total_usd)
+
+print("---------------------------------")
+print("Thank you for Shopping at Glober Market!")
+print("Please come again!")
+print("---------------------------------")
 
 #(shopping-env)  --->> python shopping_cart.py
 # Please input a product identifier: 1
