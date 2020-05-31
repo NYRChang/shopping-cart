@@ -44,29 +44,22 @@ def to_usd(my_price):
 
 #User Input
 
-# scanned_items = []
-# item = input("Please input a product identifier (from 1 to 20 or E to End): ")
-# item = int(item)
-# while ((item > 0) and (item < 20)):
-#     scanned_items.append(item)
-#     item = input("Please input a product identifier (from 1 to 20 or E to End): ")
-#     item = int(item)
-#     if (item < 1) or (item > 20):
-#         print("Not in Inventory")
-#         item = input("Please input a product identifier (from 1 to 20 or E to End): ")
-#         item = int(item)
-#     if (item == "E"):
-#         break
-# print(scanned_items)
+scanned_items = []
+while True:
+    item_id = input("Please input a product identifier (from 1 to 20 or E to end): ")
+    if (item_id == "E"):
+         break
+    else:
+        scanned_items.append(item_id)
+print(scanned_items)
 
-scanned_item = input("Please input product id (from 1 to 20 or E to End): ")
-purchase_list = [p for p in products if str(p["id"]) == scanned_item]
-purchase_item = purchase_list[0]
 
-#PRINTING THE PRODUCTS LIST *FULL PRODUCT LIST, NO FILTER FOR ID YET*
+for i in scanned_items:
+    matching_products = [p for p in products if str(p["id"]) == str(i)]
+    matching_id = matching_products[0]
+    price_usd = "${0:.2f}".format(matching_id['price'])
+    print(f" + {matching_id['name']} ({str(price_usd)})")
 
-price_usd = "${0:.2f}".format(purchase_item['price'])
-print(f" + {purchase_item['name']} ({str(price_usd)})")
 
 
 
