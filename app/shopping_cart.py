@@ -79,14 +79,17 @@ subtotal = subtotal + matching_id['price']
 subtotal_usd = "${0:.2f}".format(subtotal)
 print("Subtotal =", subtotal_usd)
 
+#Calculating Tax
 tax = subtotal * .08875
 tax_usd = "${0:.2f}".format(tax)
 print("Tax (8.875%) =", tax_usd)
 
+#Calculating Total Purchase
 total_purchase = subtotal + tax
 total_usd = "${0:.2f}".format(total_purchase)
 print("Total =", total_usd)
 
+#Footer
 print("---------------------------------")
 print("Thank you for Shopping at Glober Market!")
 print("Please come again!")
