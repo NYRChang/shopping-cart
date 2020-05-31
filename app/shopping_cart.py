@@ -40,8 +40,6 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-#print(products)
-
 #Shopper Input
 scanned_items = []
 subtotal = 0
@@ -51,7 +49,15 @@ while True:
          break
     else:
         scanned_items.append(item_id)
-        
+
+#Header
+print("---------------------------------")
+print("Glober Market")
+print("8233 Broadway")
+print("Elmhurst, NY 11373")
+print("www.globermarket.com")
+print("---------------------------------")
+
 #Printing Individual Product List and Prices
 for i in scanned_items:
     matching_products = [p for p in products if str(p["id"]) == str(i)]
