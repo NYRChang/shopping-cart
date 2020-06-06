@@ -48,7 +48,7 @@ subtotal = 0
 valid_id = [i["id"] for i in products]
 
 while True:
-    item_id = input("Please input your product ID (1 to 20) or done to checkout): ")
+    item_id = input("Please input your product ID (1 to 20) or 'DONE' to checkout): ")
     if (item_id == "DONE" or item_id =='done'):
          break
     elif(item_id in str(valid_id)):
