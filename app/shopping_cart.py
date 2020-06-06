@@ -45,12 +45,17 @@ def to_usd(my_price):
 #Shopper Input
 scanned_items = []
 subtotal = 0
+valid_id = [i["id"] for i in products]
+
 while True:
-    item_id = input("Please input a product identifier (from 1 to 20 or E to end): ")
-    if (item_id == "E"):
+    item_id = input("Please input your product ID (1 to 20) or E or e to checkout): ")
+    if (item_id == "E" or item_id =='e'):
          break
-    else:
+    elif(item_id in str(valid_id)):
         scanned_items.append(item_id)
+    else:
+        print("   * Product ID is not valid *")
+        
 
 #Header
 print("---------------------------------")
@@ -75,7 +80,6 @@ for i in scanned_items:
 print("---------------------------------")
 
 #Calculating Subtotal
-subtotal = subtotal + matching_id['price']
 subtotal_usd = "${0:.2f}".format(subtotal)
 print("Subtotal =", subtotal_usd)
 
