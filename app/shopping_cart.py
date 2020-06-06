@@ -54,7 +54,9 @@ while True:
     elif(item_id in str(valid_id)):
         scanned_items.append(item_id)
     else:
+        print(" ")
         print("   * Product ID is not valid *")
+        print(" ")
         
 
 #Header
