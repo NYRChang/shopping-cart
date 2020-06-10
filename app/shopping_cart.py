@@ -38,11 +38,11 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 
-
-
 # TODO: write some Python code here to produce the desired output
 
+
 #Shopper Input
+
 scanned_items = []
 subtotal = 0
 valid_id = [i["id"] for i in products]
@@ -53,7 +53,7 @@ while True:
          break
     elif(item_id in str(valid_id)):
         scanned_items.append(item_id)
-    else:
+    else:       #Reject Invalid Product ID
         print(" ")
         print("   * Product ID is not valid *")
         print(" ")
