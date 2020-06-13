@@ -1,7 +1,7 @@
 # shopping-cart
 ## 2335 Shopping Cart Project
 
-App is located in the app/shopping_cart.py
+App is located in the app\shopping_cart.py
 
 Product List is hard-coded (1 - 20)
 
