@@ -49,9 +49,10 @@ valid_id = [i["id"] for i in products]
 
 while True:
     item_id = input("Please input your product ID (1 to 20) or 'DONE' to checkout): ")
-    if (item_id == "DONE" or item_id =='done'):
+    if (item_id == "DONE" or item_id =='done'): #done to exit
          break
     elif (float(item_id).is_integer()) and (item_id in str(valid_id) and (int(item_id) != 0)):
+        #does not accept float, 0 and must be on item list
         scanned_items.append(item_id)
     else:       #Reject Invalid Product ID
         print(" ")
